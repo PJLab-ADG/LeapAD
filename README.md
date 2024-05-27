@@ -5,8 +5,8 @@
 <!-- **<span style="color:#ff7e5f">LeapAD</span>**, a new autonomous driving paradigm inspired by human cognition, improves adaptability and interpretability in complex scenarios through dual-process decision-making and continuous learning from past experiences. -->
 
 
-> Jianbiao Mei<sup>1,2,\*</sup>, Yukai Ma<sup>1,2,\*</sup>, Xuemeng Yang<sup>2</sup>, Licheng Wen<sup>2</sup>, Xinyu Cai<sup>2</sup>, Xin Li<sup>2,3</sup>, Daocheng Fu<sup>2</sup>, Bo Zhang<sup>2</sup>, Pinlong Cai<sup>2</sup>, Min Dou<sup>2</sup>, Botian Shi<sup>2,†</sup>, Liang He<sup>3</sup>, Yong Liu<sup>1,†</sup>, Yu Qiao<sup>2</sup>
-> <sup>1</sup> Zhejiang University <sup>2</sup> Shanghai Artificial Intelligence Laboratory <sup>3</sup> East China Normal University
+> Jianbiao Mei<sup>1,2,\*</sup>, Yukai Ma<sup>1,2,\*</sup>, Xuemeng Yang<sup>2</sup>, Licheng Wen<sup>2</sup>, Xinyu Cai<sup>2</sup>, Xin Li<sup>2,3</sup>, Daocheng Fu<sup>2</sup>, Bo Zhang<sup>2</sup>, Pinlong Cai<sup>2</sup>, Min Dou<sup>2</sup>, Botian Shi<sup>2,†</sup>, Liang He<sup>3</sup>, Yong Liu<sup>1,†</sup>, Yu Qiao<sup>2</sup> <br>
+> <sup>1</sup> Zhejiang University <sup>2</sup> Shanghai Artificial Intelligence Laboratory <sup>3</sup> East China Normal University<br>
 > <sup>\*</sup> Equal Contribution <sup>†</sup> Corresponding Authors
 
 ## 📖 News
