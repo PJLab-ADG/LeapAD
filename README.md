@@ -38,9 +38,18 @@ When Heuristic Process encounters traffic accidents, the Analytic Process interv
 The **Heuristic Process** uses several strategies to perform closed-loop decisions.  It is designed to enable instant decision-making within the vehicle. The Heuristic Process relies on knowledge transferred from the analytical process to make fast and efficient decisions during driving. This lightweight model ensures fast response and adaptability in various driving scenarios, maintaining a high level of performance with minimal computing resources. -->
 
 ## 🛣️ Demo Video in CARLA
+
 <video width="800" controls>
   <source src="videos/case2.mp4" type="video/mp4">
 </video>
+
+
+
+https://github.com/PJLab-ADG/LeapAD/assets/18390668/f5383343-a5cd-4fd3-aaf7-98302d9ea6cf
+
+
+https://github.com/PJLab-ADG/LeapAD/assets/18390668/a4dd470f-c1ef-4e55-8537-ded2ae8101d6
+
 
 We conduct closed-loop tests in CARLA. It can be seen that LeapAD can make informed decisions using the Heuristic Process with only 1.8B parameters while driving. 
 <!-- Experiments show that LeapAD outperforms all methods that rely solely on camera input, requiring 1-2 orders of magnitude less annotated data. As the memory base expands, Heuristic Process with only 1.8B parameters can inherit the knowledge of GPT-4 powered Analytic Process and achieve continuous performance improvements. -->
