@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>LeapAD: A Dual-Process Approach to Autonomous Driving</title>
+  <link rel="icon" type="image/x-icon" href="static/images/leap.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <!-- <script defer src="static/js/fontawesome.all.min.js"></script> -->
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://kit.fontawesome.com/dcd6d05807.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.0/marked.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .title.is-1.publication-title {
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+    .title-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    .title-original, .title-hover {
+      transition: opacity 1.2s ease;
+      text-align: center;
+    }
+    .title-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .title.is-1.publication-title:hover .title-original {
+      opacity: 0;
+    }
+    .title.is-1.publication-title:hover .title-hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div class="title-container">
+              <img src="static/images/leap.png" alt="Leap Icon" style="width: 90px; margin-right: 30px;">
+              <h1 class="title is-1 publication-title">
+                <span class="title-original">
+                  Continuously <span style="color: #ff7e5f;">Le</span>arning, <span style="color: #ff7e5f;">A</span>dapting
+                  and Im<span style="color: #ff7e5f;">p</span>roving:<br>
+                  A Dual-Process Approach to <span style="color: #ff7e5f;">A</span>utonomous <span style="color: #ff7e5f;">D</span>riving
+                </span>
+                <span class="title-hover" style="color: #ff7e5f;">
+                  LeapAD
+                </span>
+              </h1>
+            </div>
+            <br>
+            <div class="is-size-4 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?hl=en&user=OUtPkg0AAAAJ" target="_blank">Jianbiao Mei</a><sup>1,2,*;</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?hl=en&user=D_GzGFYAAAAJ" target="_blank">Yukai Ma</a><sup>1,2,*;</sup>
+              </span>
+              <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=xGuZsikAAAAJ" target="_blank">Xuemeng Yang</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://wenlc.cn/" target="_blank">Licheng Wen</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=v9CvBeUAAAAJ" target="_blank">Xinyu Cai</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=7atts2cAAAAJ" target="_blank">Xin Li</a><sup>2,3</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=vIU6eHYAAAAJ" target="_blank">Daocheng Fu</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=UoAEwT0AAAAJ" target="_blank">Bo Zhang</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=H6mQGfAAAAAJ" target="_blank">Pinlong Cai</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=w9fTWKQAAAAJ" target="_blank">Min Dou</a><sup>2</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=K0PpvLkAAAAJ" target="_blank">Botian Shi</a><sup>2,&dagger;</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=aW_cCQwAAAAJ" target="_blank">Liang He</a><sup>3</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?hl=en&user=qYcgBbEAAAAJ" target="_blank">Yong Liu</a><sup>1,&dagger;</sup>
+              </span>,
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=gFtI-8QAAAAJ" target="_blank">Yu Qiao</a><sup>2</sup>
+              </span>,
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Zhejiang University<br></span>,
+              <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory<br></span>,
+              <span class="author-block"><sup>3</sup>East China Normal University<br></span> 
+              <!-- Conferance name and year -->
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contributors <sup>&dagger;</sup>Indicates Corresponding Authors</small></span>
+            </div>
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/PJLab-ADG/LeapAD" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span></a>
+            </span>
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2405.15324" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+            </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const title = document.querySelector('.publication-title');
+      const originalText = document.querySelector('.title-original');
+      const hoverText = document.querySelector('.title-hover');
+
+      title.addEventListener('mouseenter', function () {
+        originalText.style.animation = 'fadeOut 0.5s forwards';
+        hoverText.style.animation = 'fadeIn 0.5s forwards';
+      });
+
+      title.addEventListener('mouseleave', function () {
+        originalText.style.animation = 'fadeIn 0.5s forwards';
+        hoverText.style.animation = 'fadeOut 0.5s forwards';
+      });
+    });
+  </script>
+  <!-- Teaser video-->
+  <!-- <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <center>
+          <video poster="" id="tree" autoplay controls muted loop height="100%" width="80%">
+            <source src="static/videos/case1.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Tease Video
+          </h2>
+      </div>
+    </div>
+  </section> -->
+  <!-- End teaser video -->
+
+
+  <!-- 视频显示 -->
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <!-- <h2 class="title">Demo Videos</h2>   -->
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <center>
+              <video width="100%" controls>
+                <source src="static/videos/case1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+            <!-- <h2 class="subtitle has-text-centered">  
+            Annotation format and example of scene description generated by VLM on DriveLM dataset.  
+          </h2>   -->
+          </div>
+          <div class="item">
+            <center>
+              <video width="100%" controls>
+                <source src="static/videos/case2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+            <!-- <h2 class="subtitle has-text-centered">  
+            Annotation format and example of scene description generated by VLM on Rank2Tell dataset.  
+          </h2>   -->
+          </div>
+          <div class="item">
+            <center>
+              <video width="100%" controls>
+                <source src="static/videos/case3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+            <!-- <h2 class="subtitle has-text-centered">  
+            Annotation format and example of scene description generated by VLM on Rank2Tell dataset.  
+          </h2>   -->
+          </div>
+
+          <!-- More video items go here -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>
+                Autonomous driving has advanced significantly due to sensors, machine learning, and artificial intelligence improvements. However, prevailing methods struggle with intricate scenarios and causal relationships, hindering adaptability and interpretability in varied environments. To address the above problems, we introduce <span style="color: #ff7e5f;">LeapAD</span>, a novel paradigm for autonomous driving inspired by the human cognitive process. Specifically, LeapAD emulates human attention by selecting critical objects relevant to driving decisions, simplifying environmental interpretation, and mitigating decision-making complexities. Additionally, LeapAD incorporates an innovative dual-process decision-making module, which consists of an Analytic Process (System-II) for thorough analysis and reasoning, along with a Heuristic Process (System-I) for swift and empirical processing. The Analytic Process leverages its logical reasoning to accumulate linguistic driving experience, which is then transferred to the Heuristic Process by supervised fine-tuning. Through reflection mechanisms and a growing memory bank, LeapAD continuously improves itself from past mistakes in a closed-loop environment. Closed-loop testing in CARLA shows that LeapAD outperforms all methods relying solely on camera input, requiring 1-2 orders of magnitude less labeled data. Experiments also demonstrate that as the memory bank expands, the Heuristic Process with only 1.8B parameters can inherit the knowledge from a GPT-4 powered Analytic Process and achieve continuous performance improvement. 
+              </b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- End paper abstract -->
+
+
+
+  <section class="section" id="Architecture">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+
+        <div class="column is-four-fifths">
+          <h2 class="title">LeapAD Architecture</h2>
+          <div class="hero-body">
+            <center>
+              <embed type="image/png" src="static/images/brief_pipeline.png" width="90%" />
+            </center>
+            <h2 class="subtitle has-text-justified" style="padding-top: 1rem;">
+              In LeapAD, the Scene Understanding module mimics human driving attention,
+              analyzing surrounding images and selectively focusing on key objects influencing decision-making.
+              It provides detailed descriptions and behavioral reasoning of these objects, facilitating informed
+              subsequent decisions.
+              The Analytic Process then uses an LLM to accumulate experience in driving analysis and decision-making,
+              conducting reflections on accidents. The experience is stored in memory and transferred to a lightweight
+              language model, forming our Heuristic Process for quick responses and continuous learning.
+            </h2>
+            <h2 class="subtitle has-text-justified" style="padding-top: 1rem;">
+              <b>The Heuristic Process</b> in LeapAD performs closed-loop decision-making using a few-shot strategy. It
+              is designed for enabling instant decision-making within the vehicle. The Heuristic Process relies on the knowledge
+              transferred from the Analytic Process to make quick and efficient
+              decisions. This lightweight language model ensures rapid responses and adaptability in various driving scenarios,
+              maintaining a high level of performance with minimal computational resources.
+            </h2>
+            <h2 class="subtitle has-text-justified" style="padding-top: 1rem;">
+              <b>The Analytic Process</b> in LeapAD is designed for thorough analysis and reasoning. It processes more
+              complex scenarios and builds a comprehensive memory bank of high-quality driving decisions. The Analytic
+              Process accumulates experience through continuous learning and self-reflection, analyzing accidents, and
+              updating the memory bank. This accumulated knowledge is then transferred to the Heuristic Process through
+              supervised fine-tuning (SFT), ensuring the entire LeapAD continuously improves and adapts to new driving
+              environments and challenges.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="columns is-centered">
+          <h2 class="title">Case Studies</h2>
+
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- Your image here -->
+            <center>
+              <img src="static/images/DriveLM_data.png" alt="MY ALT TEXT" width="80%" />
+            </center>
+            <h2 class="subtitle has-text-centered">
+              Annotation format and example of scene description generated by VLM on DriveLM dataset.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <center>
+              <img src="static/images/Rank2Tell_data.png" alt="MY ALT TEXT" width="75%" />
+            </center>
+            <h2 class="subtitle has-text-centered">
+              Annotation format and example of scene description generated by VLM on Rank2Tell dataset.
+            </h2>
+          </div>
+
+          <div class="item">
+            <!-- Your image here -->
+            <center>
+              <img src="static/images/case_1.png" alt="MY ALT TEXT" width="80%" />
+            </center>
+            <h2 class="subtitle has-text-centered">
+              A case at the intersection.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <center>
+              <img src="static/images/case_2.png" alt="MY ALT TEXT" width="80%" />
+            </center>
+            <h2 class="subtitle has-text-centered">
+              A case where a bicycle suddenly appears.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <center>
+              <img src="static/images/reflection_process.png" alt="MY ALT TEXT" width="60%" />
+            </center>
+            <h2 class="subtitle has-text-centered">
+              Case study for reflection process.
+            </h2>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+
+  <!-- Videos should be placed here. -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <div style="position: relative;">
+        <button id="copyButton" style="position: absolute; top: 0; right: 0;">Copy</button>
+        <pre><code id="bibtexCode">@article{mei2024continuously,
+          title={Continuously Learning, Adapting, and Improving: A Dual-Process Approach to Autonomous Driving},
+          author={Mei, Jianbiao and Ma, Yukai and Yang, Xuemeng and Wen, Licheng and Cai, Xinyu and Li, Xin and Fu, Daocheng and Zhang, Bo and Cai, Pinlong and Dou, Min and others},
+          journal={arXiv preprint arXiv:2405.15324},
+          year={2024}
+        }
+      </code></pre>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    var copyButton = document.getElementById("copyButton");
+
+    copyButton.addEventListener("click", function () {
+      var codeElement = document.getElementById("bibtexCode");
+      var textToCopy = codeElement.textContent;
+
+      var textarea = document.createElement("textarea");
+      textarea.value = textToCopy;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+
+      copyButton.textContent = "✓ Copied!";
+
+      setTimeout(function () {
+        copyButton.textContent = "Copy";
+      }, 2000); // Reset the button text after 2 seconds (adjust as needed)
+    });
+  </script>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p style="text-align: center;"><i class="fa-solid fa-heart fa-beat-fade" style="color: #ff8787;"></i>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> <i class="fa-solid fa-heart fa-beat-fade" style="color: #ff8787;"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
