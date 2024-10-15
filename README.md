@@ -1,6 +1,6 @@
 # <img src="figures/leap.png" alt="icon" style="width: 40px; height: 40px; vertical-align: middle;"> Continuously <span style="color:#ff7e5f">Le</span>arning, <span style="color:#ff7e5f">A</span>dapting, and Im<span style="color:#ff7e5f">p</span>roving: A Dual-Process Approach to <span style="color:#ff7e5f">A</span>utonomous <span style="color:#ff7e5f">D</span>riving
 
-[![Custom badge](https://img.shields.io/badge/Arxiv-pdf-8A2BE2?logo=arxiv)](https://arxiv.org/abs/2405.15324) [![Custom badge](https://img.shields.io/badge/Project-page-green?logo=document)](https://leapad-2024.github.io/LeapAD/) ![GitHub license](https://img.shields.io/badge/License-Apache--2.0-red)
+[![Custom badge](https://img.shields.io/badge/Arxiv-pdf-8A2BE2?logo=arxiv)](https://arxiv.org/abs/2405.15324) [![Custom badge](https://img.shields.io/badge/Project-page-green?logo=document)](https://pjlab-adg.github.io/LeapAD/) ![GitHub license](https://img.shields.io/badge/License-Apache--2.0-red)
 
 <!-- **<span style="color:#ff7e5f">LeapAD</span>**, a new autonomous driving paradigm inspired by human cognition, improves adaptability and interpretability in complex scenarios through dual-process decision-making and continuous learning from past experiences. -->
 
@@ -10,10 +10,11 @@
 > <sup>\*</sup> Equal Contribution <sup>†</sup> Corresponding Authors
 
 ## 📖 News
+- `[2024-9-26]` Our LeapAD is accepted by NeurIPS 2024!
 
-- `[2024-5-27]` The paper can be accessed at [arxiv](https://arxiv.org/abs/2405.15324)
+- `[2024-5-27]` The paper can be accessed at [arxiv](https://arxiv.org/abs/2405.15324).
 
-- `[2024-5-22]` We released our project website [here](https://leapad-2024.github.io/LeapAD/)
+- `[2024-5-22]` We released our project website [here](https://pjlab-adg.github.io/LeapAD/).
 
 ---
 
@@ -57,3 +58,13 @@ We conduct closed-loop tests in CARLA. It can be seen that LeapAD can make infor
 ## 📄 License
 
 This project is released under the [Apache 2.0 license](LICENSE). 
+
+## 🔖 Citation
+
+If you find our project useful, please kindly cite us via:
+
+```bibtext
+@article{mei2024continuously,
+          title={Continuously Learning, Adapting, and Improving: A Dual-Process Approach to Autonomous Driving},
+          author={Mei, Jianbiao and Ma, Yukai and Yang, Xuemeng and Wen, Licheng and Cai, Xinyu and Li, Xin and Fu, Daocheng and Zhang, Bo and Cai, Pinlong and Dou, Min and others},
+          journal={arXiv preprint arXiv:2405.15324}
