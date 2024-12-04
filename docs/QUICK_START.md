@@ -8,12 +8,12 @@ python tools/fast_api_vlm -c [path to weights] --port 9000
 python tools/fast_api_llm -c [path to weights] --port 9005
 ```
 
-## Step-2 Launch CARLA simulator locally
+## Step-2: Launch CARLA simulator locally
 ```
 cd [YOUR ROOT TO CARLA]
 ./CarlaUE4.sh --world-port=${carla_port} --resX=800 --resY=600 -quality-level=low
 ```
-## Step-3 Port Mapping
+## Step-3: Port Mapping
 If all modules such as VLM and LLM are running locally or can be accessed directly via the public internet, you can skip this step.
 
 Map the server-side service ports to your local machine:
@@ -24,7 +24,7 @@ ssh -N username@server_adress -p server_port -L 9000:localhost:vlm_port -L 9005:
 ```
 
 
-## Step-4 Launch Agent
+## Step-4: Launch Agent
 ### Configuration
 
 * Before running the script, ensure you have your OpenAI `api_key` and `proxies` set up. Then, modify the variants in the [config.py](../team_code/config.py).
