@@ -1,4 +1,4 @@
-# <img src="figures/leap.png" alt="icon" style="width: 40px; height: 40px; vertical-align: middle;"> Continuously <span style="color:#ff7e5f">Le</span>arning, <span style="color:#ff7e5f">A</span>dapting, and Im<span style="color:#ff7e5f">p</span>roving: A Dual-Process Approach to <span style="color:#ff7e5f">A</span>utonomous <span style="color:#ff7e5f">D</span>riving
+# <img src="assets/figures/leap.png" alt="icon" style="width: 40px; height: 40px; vertical-align: middle;"> Continuously <span style="color:#ff7e5f">Le</span>arning, <span style="color:#ff7e5f">A</span>dapting, and Im<span style="color:#ff7e5f">p</span>roving: A Dual-Process Approach to <span style="color:#ff7e5f">A</span>utonomous <span style="color:#ff7e5f">D</span>riving
 
 [![Custom badge](https://img.shields.io/badge/Arxiv-pdf-8A2BE2?logo=arxiv)](https://arxiv.org/abs/2405.15324) [![Custom badge](https://img.shields.io/badge/Project-page-green?logo=document)](https://pjlab-adg.github.io/LeapAD/) ![GitHub license](https://img.shields.io/badge/License-Apache--2.0-red)
 
@@ -22,14 +22,14 @@
 We introduce **<span style="color:#ff7e5f">LeapAD</span>**, a novel paradigm for autonomous driving inspired by the human cognitive process. Specifically, LeapAD emulates human attention by selecting critical objects relevant to driving decisions, simplifying environmental interpretation, and mitigating decision-making complexities. Additionally, LeapAD incorporates an innovative dual-process decision-making module, which consists of an **Analytic Process** (System-II) for thorough analysis and reasoning, along with a **Heuristic Process** (System-I) for swift and empirical processing. 
 
 <div style="text-align:center;">
-  <img src="asserts/figures/brief_pipeline.png" alt="pipeline" width="600">
+  <img src="assets/figures/brief_pipeline.png" alt="pipeline" width="600">
 </div>
 
 The <span style="color:#B46504">scene understanding module</span> analyzes surrounding images and provides descriptions of critical objects that may influence driving decisions. These scenario descriptions are then fed into the <span style="color:#EA6B66">dual-process decision module</span> for reasoning and decision-making. The generated decisions are then transmitted to <span style="color:#A680B8">action executor</span>, where they are converted into control signals for interaction with the <span style="color: #1BA1E2">simulator</span>. 
 The Analytic Process then uses an LLM to accumulate driving analysis and decision-making experience and conduct reflection on accidents. The experience is stored in the <span style="color:#009600">memory bank</span> and transferred to a lightweight language model, forming our Heuristic Process for quick responses and continuous learning.
 
 <div style="text-align:center;">
-    <img src="asserts/figures/reflection.png" alt="pipeline" width="600">
+    <img src="assets/figures/reflection.png" alt="pipeline" width="600">
 </div>
 
 When Heuristic Process encounters traffic accidents, the Analytic Process intervenes, analyzing historical frames to pinpoint errors and provide corrected samples. These corrected samples are then integrated into the memory bank to facilitate continuous learning.
