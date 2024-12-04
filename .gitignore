@@ -136,7 +136,3 @@ replay/*
 !replay/.gitignore
 result/*
 !result/.gitignore
-!replay/make_data.py
-record/*
-!record/.gitignore
-memory
