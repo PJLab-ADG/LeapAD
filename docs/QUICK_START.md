@@ -41,7 +41,7 @@ memory_embedding_path = "./memory/test.npy"
 memory_database_path = "./memory/test.db"
 ```
 
-* If you want to utilize Analytic Process (GPT-4) for decision making, modify the variant `LIGHT_LLM` in the [memory database](../memory/) to False.
+* If you want to utilize Analytic Process (GPT-4) for decision making, modify the variant `LIGHT_LLM` in the [config.py](../team_code/config.py) to False.
 
 ### Run the script
 ```
