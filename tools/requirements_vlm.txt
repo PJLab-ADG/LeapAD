@@ -1,0 +1,13 @@
+transformers==4.32.0
+accelerate
+tiktoken
+einops
+transformers_stream_generator==0.0.4
+scipy
+torchvision
+pillow
+tensorboard
+matplotlib
+uvicorn==0.24.0.post1
+fastapi==0.105.0
+peft==0.10.0

@@ -1,0 +1,9 @@
+dictor==0.1.12
+ephem
+py_trees==0.8.3
+pygame
+opencv-python==4.2.0.32
+requests==2.31.0
+shapely
+six
+tabulate

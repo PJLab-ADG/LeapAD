@@ -1,0 +1,15 @@
+accelerate
+tiktoken
+einops
+tokenizers==0.15.2
+torch==2.0.1
+torchvision==0.15.2
+tornado==6.4
+tqdm==4.66.2
+transformers==4.38.1
+transformers-stream-generator==0.0.4
+pillow
+tensorboard
+matplotlib
+uvicorn==0.24.0.post1
+fastapi==0.105.0
