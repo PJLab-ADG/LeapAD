@@ -41,7 +41,7 @@ The **Heuristic Process** uses several strategies to perform closed-loop decisio
 ## 🤩 Getting Started
 
 * Please follow [INSTALL.md](docs/INSTALL.md) to setup the environment, make sure you are using a machine with **at least** a mid-end GPU to run CARLA.
-*  To run the LeapAD within CARLA, please refer to the [QUICK_START.md](docs/QUIC_START.md) .
+*  To run the LeapAD within CARLA, please refer to the [QUICK_START.md](docs/QUICK_START.md) .
 
 ## 🛣️ Demo Video in CARLA
 
