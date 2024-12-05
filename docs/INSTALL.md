@@ -20,12 +20,14 @@ conda env create -f environment.yaml
 
 ```
 conda create -n Qwen-VL python=3.9
+conda activate Qwen-VL
 pip install -r tools/requirements_vlm.txt
 ```
 * Setup enviroment for Heuristic Process (Qwen1.5). Refer to [this link](https://github.com/QwenLM/Qwen2.5/tree/v1.5) if you are confused at this step.
 
 ```
 conda create -n Qwen1.5 python=3.9
+conda activate Qwen1.5
 pip install -r tools/requirements_llm.txt
 ```
 

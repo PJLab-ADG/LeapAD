@@ -4,7 +4,9 @@ The communication between Scene Understanding Module (VLM, Qwen-VL), Analytic/He
 * Download the pretrained checkpoints of [Qwen-VL-7B](https://huggingface.co/Jianbiao/qwenvl-7b-scene-understanding) and [Qwen1.5-1.8B](https://huggingface.co/jianbiao/qwen1.5-decision).
 * Run the Program.
 ```
+conda activate Qwen-VL
 python tools/fast_api_vlm -c [path to weights] --port 9000
+conda activate Qwen1.5
 python tools/fast_api_llm -c [path to weights] --port 9005
 ```
 
