@@ -47,6 +47,7 @@ memory_database_path = "./memory/test.db"
 
 ### Run the script
 ```
+conda activate LeapAD
 ./leaderboard/scripts/eval_leapad.sh ${carla_port} ${traffic_port} ${vlm_port} ${llm_port}
 ```
 
