@@ -1,7 +1,7 @@
 ## Quick Start
 The communication between Scene Understanding Module (VLM, Qwen-VL), Analytic/Heuristic Process (LLM, GPT-4/Qwen1.5) and CARLA is based on FastAPI.
 ## Step-1: Launch VLM and LLM on the server
-* Download the pretrained checkpoints of [Qwen-VL-7B](https://huggingface.co/Jianbiao/qwenvl-7b-scene-understanding) and [Qwen1.5-1.8B](https://huggingface.co/jianbiao/qwen1.5-1.8b-decision).
+* Download the pretrained checkpoints of [Qwen-VL-7B](https://huggingface.co/Jianbiao/qwenvl-7b-scene-understanding/tree/main) and [Qwen1.5-1.8B](https://huggingface.co/Jianbiao/qwen1.5-1.8b-decision/tree/main).
 * Run the Program.
 ```
 conda activate Qwen-VL
