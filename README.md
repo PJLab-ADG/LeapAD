@@ -11,7 +11,7 @@
 
 ## 📖 News
 
-- `[2025-1-25]` We upgraded the VLM part of L e a p AD with the scene retrieval part and presented an upgraded version of **LeapVAD**, you can find our article [here](https://arxiv.org/abs/2501.08168).
+- `[2025-1-25]` We upgraded the VLM part of LeapAD with the scene retrieval part and presented an upgraded version of **LeapVAD**, you can find our article [here](https://arxiv.org/abs/2501.08168).
 
 - `[2024-9-26]` Our LeapAD is accepted by NeurIPS 2024!
 
