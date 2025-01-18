@@ -10,6 +10,9 @@
 > <sup>\*</sup> Equal Contribution <sup>†</sup> Corresponding Authors
 
 ## 📖 News
+
+- `[2025-1-25]` We upgraded the VLM part of L e a p AD with the scene retrieval part and presented an upgraded version of **LeapVAD**, you can find our article [here](https://arxiv.org/abs/2501.08168).
+
 - `[2024-9-26]` Our LeapAD is accepted by NeurIPS 2024!
 
 - `[2024-5-27]` The paper can be accessed at [arxiv](https://arxiv.org/abs/2405.15324).
@@ -76,6 +79,15 @@ If you find our project useful, please kindly cite us via:
 
 ```bibtext
 @article{mei2024continuously,
-          title={Continuously Learning, Adapting, and Improving: A Dual-Process Approach to Autonomous Driving},
-          author={Mei, Jianbiao and Ma, Yukai and Yang, Xuemeng and Wen, Licheng and Cai, Xinyu and Li, Xin and Fu, Daocheng and Zhang, Bo and Cai, Pinlong and Dou, Min and others},
-          journal={arXiv preprint arXiv:2405.15324}
+    title={Continuously Learning, Adapting, and Improving: A Dual-Process Approach to Autonomous Driving},
+    author={Mei, Jianbiao and Ma, Yukai and Yang, Xuemeng and Wen, Licheng and Cai, Xinyu and Li, Xin and Fu, Daocheng and Zhang, Bo and Cai, Pinlong and Dou, Min and others},
+    journal={arXiv preprint arXiv:2405.15324}
+
+@misc{ma2025leapvad,
+    title={LeapVAD: A Leap in Autonomous Driving via Cognitive Perception and Dual-Process Thinking},
+    author={Yukai Ma and Tiantian Wei and Naiting Zhong and Jianbiao Mei and Tao Hu and Licheng Wen and Xuemeng Yang and Botian Shi and Yong Liu},
+    year={2025},
+    eprint={2501.08168},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI}
+}
