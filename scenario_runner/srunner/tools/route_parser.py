@@ -9,11 +9,10 @@ Module used to parse all the route and scenario configuration parameters.
 
 import json
 import math
-import xml.etree.ElementTree as ET
-
 import carla
 from agents.navigation.local_planner import RoadOption
 from srunner.scenarioconfigs.route_scenario_configuration import RouteScenarioConfiguration
+from srunner.tools.safe_xml import ET
 
 # TODO  check this threshold, it could be a bit larger but not so large that we cluster scenarios.
 TRIGGER_THRESHOLD = 2.0  # Threshold to say if a trigger position is new or repeated, works for matching positions

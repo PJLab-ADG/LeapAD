@@ -11,7 +11,7 @@ This module provides access to a scenario configuration parser
 
 import glob
 import os
-import xml.etree.ElementTree as ET
+from srunner.tools.safe_xml import ET
 
 from srunner.scenarioconfigs.scenario_configuration import ScenarioConfiguration, ActorConfigurationData
 from srunner.scenarioconfigs.route_scenario_configuration import RouteConfiguration

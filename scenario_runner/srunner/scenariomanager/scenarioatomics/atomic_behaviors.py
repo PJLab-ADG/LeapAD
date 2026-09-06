@@ -20,6 +20,7 @@ import math
 import operator
 import os
 import random
+import shlex
 import time
 import subprocess
 
@@ -154,6 +155,7 @@ class RunScript(AtomicBehavior):
 
     Note:
         This is intended for the use with OpenSCENARIO. Be aware of security side effects.
+        Commands are executed without a shell; paths must stay under base_path when set.
     """
 
     def __init__(self, script, base_path=None, name="RunScript"):
@@ -169,18 +171,38 @@ class RunScript(AtomicBehavior):
         """
         Start script
         """
-        path = None
-        script_components = self._script.split(' ')
-        if len(script_components) > 1:
-            path = script_components[1]
+        new_status = py_trees.common.Status.FAILURE
+        try:
+            script_components = shlex.split(self._script)
+        except ValueError:
+            print("Invalid script command: {}".format(self._script))
+            self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
+            return new_status
 
+        if len(script_components) < 2:
+            print("Script command must include an interpreter and a script path")
+            self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
+            return new_status
+
+        path = script_components[1]
         if not os.path.isfile(path):
-            path = os.path.join(self._base_path, path)
+            if self._base_path:
+                path = os.path.join(self._base_path, path)
         if not os.path.isfile(path):
-            new_status = py_trees.common.Status.FAILURE
             print("Script file does not exists {}".format(path))
         else:
-            subprocess.Popen(self._script, shell=True, cwd=self._base_path)
+            # Prevent path traversal / escaping the OpenSCENARIO base directory.
+            real_path = os.path.realpath(path)
+            if self._base_path:
+                real_base = os.path.realpath(self._base_path)
+                if not (real_path == real_base or real_path.startswith(real_base + os.sep)):
+                    print("Script path escapes base_path: {}".format(path))
+                    self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
+                    return new_status
+
+            argv = [script_components[0], real_path] + script_components[2:]
+            # Never use shell=True: CustomCommandAction/@type is attacker-controlled via .xosc.
+            subprocess.Popen(argv, shell=False, cwd=self._base_path)
             new_status = py_trees.common.Status.SUCCESS
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
