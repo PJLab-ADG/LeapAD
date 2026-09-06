@@ -11,7 +11,7 @@ This module provides the key configuration parameters for a scenario based on Op
 
 import logging
 import os
-import xml.etree.ElementTree as ET
+from srunner.tools.safe_xml import ET
 
 import xmlschema
 

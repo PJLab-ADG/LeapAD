@@ -78,7 +78,9 @@ class RosAgent(AutonomousAgent):
 
         # set use_sim_time via commandline before init-node
         process = subprocess.Popen(
-            "rosparam set use_sim_time true", shell=True, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+            ["rosparam", "set", "use_sim_time", "true"],
+            stderr=subprocess.STDOUT,
+            stdout=subprocess.PIPE)
         process.wait()
         if process.returncode:
             raise RuntimeError("Could not set use_sim_time")
@@ -92,7 +94,7 @@ class RosAgent(AutonomousAgent):
 
         # execute script that starts the ad stack (remains running)
         rospy.loginfo("Executing stack...")
-        self.stack_process = subprocess.Popen(start_script, shell=True, preexec_fn=os.setpgrp)
+        self.stack_process = subprocess.Popen([start_script], shell=False, preexec_fn=os.setpgrp)
 
         self.vehicle_control_event = threading.Event()
         self.timestamp = None
